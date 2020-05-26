@@ -1,7 +1,7 @@
-# My vim cheatsheet
+# La cheatsheet vim
 
-If you are just interested in the doc : it's [here](https://github.com/SebDruon/cheatsheet_vim/blob/master/cheatsheet_vim.pdf)
+Si vous voulez juste le pdf, c'est [ici](https://github.com/SebDruon/cheatsheet_vim/blob/master/cheatsheet_vim.pdf)
 
-If you want more, well, at least there's a Makefile ...
+Si vous vouliez plus ... euh ... ben au moins il y a un Makefile :)
+Amusez vous bien !
 
-Hope it helps :)
