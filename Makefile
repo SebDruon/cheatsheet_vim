@@ -4,6 +4,7 @@ all: main_fr.pdf
 
 main_fr.pdf:	main_fr.tex def.tex
 	$(LATEX) main_fr.tex
+	$(LATEX) main_fr.tex
 
 clean:
 	rm -f *.log
