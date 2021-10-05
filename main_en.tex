@@ -46,7 +46,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
 \begin{mdframed}[style=header]
 \footnotesize
 \sffamily
-\textbf{Aide mémoire Vim}\\
+\textbf{Vim Cheatsheet}\\
 {\scriptsize seb@homedruon.com}
 \end{mdframed}
 }
@@ -181,7 +181,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
 
 \begin{multicols*}{3}
 
-    \section{Entrer ... et sortir}
+    \section{Launching ... and exiting}
 
     \subsection{invocation}
 
@@ -192,47 +192,47 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{vim scp://login@serveur/path/}  & \\
     \end{tabular}
 
-    \subsection{sortir}
+    \subsection{Exiting}
     \begin{tabular}{m{2cm} l}
-        \texttt{:q}   & Quitter\\
-        \texttt{:wq}  & Sauvegarder et quitter \\
-        \texttt{:q!}  & Quitter sans sauver\\
+        \texttt{:q}   & Quit\\
+        \texttt{:wq}  & Sauve and quit \\
+        \texttt{:q!}  & Quit without saving\\
     \end{tabular}
 
-    \section{Se déplacer}
+    \section{Moving}
     \begin{tabular}{m{2cm} l}
-        \texttt{h,j,k,l}  & Se déplacer \\
+        \texttt{h,j,k,l}  & Move cursor \\
     \end{tabular}
-    \subsection{Dans la ligne}
+    \subsection{Inside the line}
     \begin{tabular}{m{2cm} l}
-        \texttt{0}  & Aller au début de la ligne \\
-        \texttt{\$} & Aller à la fin de la ligne \\
-        \texttt{\^} & Aller au 1er char. de la ligne \\
-        \texttt{w}  & Mot suivant\\
-        \texttt{W}  & Mot suivant (précédé par un espace)\\
+        \texttt{0}  & Jump to first char \\
+        \texttt{\$} & Jump to last char \\
+        \texttt{\^} & Jump to first word of the line \\
+        \texttt{w}  & Next word\\
+        \texttt{W}  & Previous word\\
     \end{tabular}
-    \subsection{Dans le fichier }
+    \subsection{Inside the file }
     \begin{tabular}{m{2cm} l}
-        \texttt{gg} & Aller au début de la 1ère ligne \\
-        \texttt{G}  & Aller au début de la dernière ligne \\
-        \texttt{:n} & Aller à la ligne n \\
-        \texttt{\%} & Aller à la parenthèse correspondante \\
-    \end{tabular}
-
-    \section{Passer en mode insertion}
-    \begin{tabular}{m{2cm} l}
-        \texttt{i}  & A l'emplacement du curseur\\
-        \texttt{a}  & Après le curseur\\
-        \texttt{A}  & A la fin de la ligne\\
-        \texttt{o}  & En ouvrant une ligne en dessous\\
-        \texttt{O}  & En ouvrant une ligne au dessus\\
+        \texttt{gg} & Jump to first line (start)\\
+        \texttt{G}  & Jump to last line (start) \\
+        \texttt{:n} & Jump to line n \\
+        \texttt{\%} & Jump to matching Paren, Brace, etc. \\
     \end{tabular}
 
-    \section{Passer en mode visuel}
+    \section{Switch to insert mode}
     \begin{tabular}{m{2cm} l}
-        \texttt{v}& Mode visuel charactère\\
-        \texttt{V}& Mode visuel ligne\\
-        \texttt{CTRL+v}& Mode visuel block\\
+        \texttt{i}  & At cursor position\\
+        \texttt{a}  & after cursor\\
+        \texttt{A}  & At the end of the line\\
+        \texttt{o}  & Open a new line (after)\\
+        \texttt{O}  & Open a new line (before)\\
+    \end{tabular}
+
+    \section{Switch to visual mode}
+    \begin{tabular}{m{2cm} l}
+        \texttt{v}& Visual mode (char by char)\\
+        \texttt{V}& Visual mode (line by line)\\
+        \texttt{CTRL+v}& Visual mode (block)\\
     \end{tabular}
 
     \section{Undo / Redo}
@@ -241,174 +241,174 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL+r}& Redo\\
     \end{tabular}\\
 
-    \section{ Sans quitter le mode insert}
+    \section{Without leaving Insert mode}
     \begin{tabular}{m{2cm} l}
-        \texttt{CTRL+w} & Efface le mot précédent\\
-        \texttt{CTRL+u} & Efface depuis le début de la ligne\\
+        \texttt{CTRL+w} & Erase previous word\\
+        \texttt{CTRL+u} & Erase until the begining of the line\\
     \end{tabular}\\
 
-    \section{Ouvrir / Sauver}
+    \section{Open / Save}
     \begin{tabular}{m{2cm} l}
-        \texttt{:e fichier}& Ouvrir un fichier dans un buffer\\
-        \texttt{:w}& Sauver\\
-        \texttt{:w fichier}& Sauver Sous \\
+        \texttt{:e fichier}& Open a file in a buffer\\
+        \texttt{:w}& Save\\
+        \texttt{:w fichier}& Save as \\
     \end{tabular}\\
-    \section{Gestion des buffers}
+    \section{Buffers}
     \begin{tabular}{m{2cm} l}
-        \texttt{:ls}& Lister les buffers\\
-        \texttt{:b7}& Afficher le buffer 7\\
-        \texttt{:bn}& Buffer suivant\\
-        \texttt{:bp}& Buffer précédent\\
-    \end{tabular}\\
-
-    \section{Gestion des fenêtres}
-    \begin{tabular}{m{2cm} l}
-        \texttt{CTRL+w v}& Couper verticalement\\
-        \texttt{CTRL+w s}& Couper horizontalement\\
-        \texttt{CTRL+w $\leftarrow$ }& Aller dans la fenêtre à gauche\\
-        \texttt{CTRL+w $\rightarrow$ }&Aller dans la fenêtre à droite\\
-        \texttt{CTRL+w $\uparrow$ }&Aller dans la fenêtre au dessus\\
-        \texttt{CTRL+w $\downarrow$ }&Aller dans la fenêtre en dessous\\
-        \texttt{CTRL+w c }&Fermer la fenêtre\\
+        \texttt{:ls}& List all buffers\\
+        \texttt{:b7}& Switch to buffer 7\\
+        \texttt{:bn}& Next buffer\\
+        \texttt{:bp}& Previous buffer\\
     \end{tabular}\\
 
-    \section{Copier / Coller}
-    \subsection{ Copier la sélection courante }
+    \section{Windows}
     \begin{tabular}{m{2cm} l}
-        \texttt{y}& Copier\\
-        \texttt{d}& Couper\\
+        \texttt{CTRL+w v}& Split vertically\\
+        \texttt{CTRL+w s}& Split horizontally\\
+        \texttt{CTRL+w $\leftarrow$ }& Go to Left window\\
+        \texttt{CTRL+w $\rightarrow$ }& Go to right window\\
+        \texttt{CTRL+w $\uparrow$ }& Go to window above\\
+        \texttt{CTRL+w $\downarrow$ }&Go to window under\\
+        \texttt{CTRL+w c }&Close window\\
+    \end{tabular}\\
+
+    \section{Copy / Paste}
+    \subsection{ Copy current selection }
+    \begin{tabular}{m{2cm} l}
+        \texttt{y}& Copy\\
+        \texttt{d}& Cut\\
     \end{tabular}
-    \subsection{ Coller }
+    \subsection{ Paste }
     \begin{tabular}{m{2cm} l}
-        \texttt{p}& Coller (après)\\
-        \texttt{P}& Coller (avant)\\
+        \texttt{p}& Paste (after)\\
+        \texttt{P}& Paste (before)\\
     \end{tabular}
-    \subsection{ Copier sans selection }
+    \subsection{ Copy withou selection selection }
     \begin{tabular}{m{2cm} l}
-        \texttt{yy}& Copier la ligne courante\\
-        \texttt{dd}& Couper la ligne courante\\
-        \texttt{yny}& Copier n lignes \\
-        \texttt{yw}& Copier le mot courant\\
-        \texttt{y\$}& Copier du curseur à la fin de la ligne\\
+        \texttt{yy}& Copy current line\\
+        \texttt{dd}& Cut current line\\
+        \texttt{yny}& Copy n lines \\
+        \texttt{yw}& Copy current word\\
+        \texttt{y\$}& Copy from cursor to the end of the line\
     \end{tabular}
 
-    \subsection{ Utilisation des registres }
+    \subsection{ Using registers }
     \begin{tabular}{m{2cm} l}
-        \texttt{"ay}& Copier dans le registre a\\
-        \texttt{"Ay}& Copier et ajouter au registre a\\
-        \texttt{:reg}& Voir les registres et leur contenu\\
+        \texttt{"ay}& Copy in register a\\
+        \texttt{"Ay}& Copy and add to a register\\
+        \texttt{:reg}& Display registers\\
     \end{tabular} \\
 
-    Les registres utilisables sont les suivants :\\
+    The registers you can use are the following :\\
 
     \begin{tabular}{m{2cm} l}
-        \texttt{a..z}& 26 registres généraux\\
-        \texttt{1..9}& Registres des 9 derniers usages de d\\
-        \texttt{+}   & Registre presse-papier système (ctrl+c)\\
-        \texttt{*}   & Registre presse-papier système (souris)\\
-        \texttt{\%}  & Registre contenant le nom du fichier\\
+        \texttt{a..z}& 26 general-purpose registers\\
+        \texttt{1..9}& 9 last uses of d\\
+        \texttt{+}   & System copy-paste register (ctrl+c)\\
+        \texttt{*}   & System copy-paste register (mouse)\\
+        \texttt{\%}  & Filename\\
     \end{tabular} \\
 
-    \section{Rechercher}
+    \section{Search}
     \begin{tabular}{m{2cm} l}
-        \texttt{/mot}& Recherche "mot"\\
-        \texttt{n}& Suivant\\
-        \texttt{N}& Précédent\\
+        \texttt{/word}& Find "word"\\
+        \texttt{n}& Next\\
+        \texttt{N}& Previous\\
     \end{tabular}
 
-    \section{Remplacer}
+    \section{Search \& replace}
     
     \texttt{:\%s{\char`\/}expr1/expr2/g} \\
     
     \begin{tabular}{m{2cm} l}
-        \texttt{expr1 }   &  L'expression à remplacer\\
-        \texttt{expr2 }   &  L'expression de remplacement \\
-        \texttt{\% }   &  La portée de la recherche\\
+        \texttt{expr1 }   &  Expression we're searching \\
+        \texttt{expr2 }   &  Replacement expression\\
+        \texttt{\% }   &  Search scope\\
         \texttt{g }   &  Options\\
     \end{tabular}\\
 
-    \subsection{Portée:}
+    \subsection{Scope:}
     \begin{tabular}{m{2cm} l}
-        \texttt{n,m}  & De la ligne n à la ligne m \\
-        \texttt{.,+5} & La ligne courante et les 5 lignes suivantes \\
-        \texttt{\%}   & dans tout le fichier \\
+        \texttt{n,m}  & From line n to m\\
+        \texttt{.,+5} & Current line and 5 following \\
+        \texttt{\%}   & In all file\\
     \end{tabular}\\
 
     \subsection{Options:}
     \begin{tabular}{m{2cm} l}
-        \texttt{g} & Continuer après le premier match sur la ligne\\
-        \texttt{c} & Demander confirmation\\
-        \texttt{i} & Ignorer la casse\\
+        \texttt{g} & Continue after first match\\
+        \texttt{c} & Ask before replacing\\
+        \texttt{i} & Ignore case\\
     \end{tabular}\\
 
-    \section{Correction orthographique}
+    \section{Spell checking}
     \begin{tabular}{m{4cm} l}
-        \texttt{:spell lang=fr} & Démarrer le correcteur\\
-        \texttt{:setlocal spell lang=fr} & Correction dans le buffer courant\\
-        \texttt{:set nospell} & Arrête le correcteur\\
-        \texttt{]s} & Mot erroné suivant\\
-        \texttt{[s} & Mot erroné précédent\\
-        \texttt{z=} & Suggérer une correction\\
-        \texttt{zg} & Mot correct (ajoute au dico)\\
-        \texttt{zw} & Marque le mot comme incorrect\\
+        \texttt{:spell lang=fr} & Start spell checking\\
+        \texttt{:setlocal spell lang=fr} & Correction in current buffer\\
+        \texttt{:set nospell} & Stop spell checking\\
+        \texttt{]s} & Next erroneous word\\
+        \texttt{[s} & Previous erroneous word\\
+        \texttt{z=} & Suggest a correction\\
+        \texttt{zg} & Correct word (add to dictionary)\\
+        \texttt{zw} & Mark word as incorrect\\
     \end{tabular}\\
 
-    \section{Le coin du codeur}
-    \subsection{Incrémenter / Décrémenter}
+    \section{Coders' corner}
+    \subsection{Increase / Decrease}
     \begin{tabular}{m{2cm} l}
-        \texttt{CTRL+a} & Incrémenter un nombre\\
-        \texttt{CTRL+x} & Décrémenter un nombre\\
+        \texttt{CTRL+a} & Adds 1 to a number\\
+        \texttt{CTRL+x} & Subsracts 1 to a number\\
     \end{tabular}\\
     \subsection{indentation}
     \begin{tabular}{m{2cm} l}
-        \texttt{=}  & Indente auto. la selection\\
-        \texttt{==} & Indente auto. la ligne\\
-        \texttt{$>$}  & Augmente l'indentation \\
-        \texttt{$<$}  & Réduit l'indentation \\
-        \texttt{$>>$} & Augmente l'indentation de la ligne\\
-        \texttt{$<<$} & Réduit l'indentation de la ligne\\
-        \texttt{$n>>$} & Augmente de n indentations la ligne\\
+        \texttt{=}  & Auto. indent selection\\
+        \texttt{==} & Auto. indent line \\
+        \texttt{$>$}  & Increase indentation \\
+        \texttt{$<$}  & Reduce indentation \\
+        \texttt{$>>$} & Increase indentation of the current line\\
+        \texttt{$<<$} & Reduce indentation of the current line\\
+        \texttt{$n>>$} & Increase by n the indentation of the line\\
     \end{tabular}\\
     \subsection{Compilation}
     \begin{tabular}{m{2cm} l}
-        \texttt{:make}  & Lance make dans le repertoire courant\\
+        \texttt{:make}  & Launch make in the current folder\\
     \end{tabular}\\
-    \subsection{Commandes Shell}
+    \subsection{Shell Commands}
     \begin{tabular}{m{2cm} l}
-        \texttt{:r fichier} & Insère le contenu de <fichier> \\
-        \texttt{:! cmd}  & Execute la commande cmd dans un shell\\
-        \texttt{:r! cmd} & Execute cmd et insère le résultat \\
+        \texttt{:r file} & Insert the content of <file> \\
+        \texttt{:! cmd}  & Execute the command cmd in a shell\\
+        \texttt{:r! cmd} & Execute the command cmd and insert the result \\
     \end{tabular}\\
 
-    \section{Gestion des sessions}
+    \section{Sessions}
     \begin{tabular}{m{4cm} l}
-        \texttt{:mks fichier.vim} & Enregistre la session\\
-        \texttt{:source fichier.vim} & Restaure la session\\
+        \texttt{:mks fichier.vim} & Save the session\\
+        \texttt{:source fichier.vim} & Restore the session\\
     \end{tabular}\\
     
-    \section{Gestion de fichiers (netrw) }
+    \section{File management (netrw) }
     \begin{tabular}{m{2cm} l}
-        \texttt{:Explore} & Ouvre le gestionnaire de fichiers\\
+        \texttt{:Explore} & Open file manager\\
     \end{tabular}\\
-    \subsection{ Opérations}
+    \subsection{ Operations}
     \begin{tabular}{m{2cm} l}
-        \texttt{D} & Effacer fichier/repertoire\\
-        \texttt{d} & Créer un repertoire\\
-        \texttt{\%} & Ouvrir un nouveau fichier\\
+        \texttt{D} & Delete file/directory\\
+        \texttt{d} & Create new folder\\
+        \texttt{\%} & Open a new file\\
     \end{tabular}\\
-    \subsection{ Marquer / Démarquer}
+    \subsection{ Marked / unmark}
     \begin{tabular}{m{2cm} l}
-        \texttt{mf} & Marquer un fichier\\
-        \texttt{mu} & Démarquer tous les fichiers\\
-        \texttt{mp} & Afficher les fichiers marqués\\
-        \texttt{mt} & Taguer le repertoire courant\\
+        \texttt{mf} & Mark a file\\
+        \texttt{mu} & Unmark all files\\
+        \texttt{mp} & Display marked files\\
+        \texttt{mt} & Tag current folder\\
     \end{tabular}\\
-    \subsection{ Opérations sur les fichiers marqués}
+    \subsection{ Operations on tagged files}
     \begin{tabular}{m{2cm} l}
-        \texttt{me} & Editer\\
+        \texttt{me} & Edit\\
         \texttt{md} & Diff\\
-        \texttt{mc} & Copier dans le repertoire tagué\\
-        \texttt{mm} & Déplacer dans le repertoire tagué\\
+        \texttt{mc} & Copy in tagged folder\\
+        \texttt{mm} & Move to tagged folder\\
     \end{tabular}\\
 
 \end{multicols*}
