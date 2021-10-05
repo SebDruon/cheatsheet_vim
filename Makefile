@@ -1,9 +1,9 @@
 LATEX= pdflatex
 
-all: main.pdf
+all: main_fr.pdf
 
-main.pdf:	main.tex def.tex
-	$(LATEX) main.tex
+main_fr.pdf:	main_fr.tex def.tex
+	$(LATEX) main_fr.tex
 
 clean:
 	rm -f *.log

@@ -1,0 +1,260 @@
+\documentclass[8pt,landscape,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage[t1]{sourcesanspro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[top=1cm,bottom=1cm,left=1cm,right=1cm]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+\usepackage{lipsum} 
+\usepackage{array} 
+
+\let\bar\overline
+
+\include{def}
+\begin{document}
+\small
+
+\begin{multicols*}{3}
+
+    \section{Entrer ... et sortir}
+
+    \subsection{invocation}
+
+    \begin{tabular}{m{7cm} l}
+        \texttt{vim file1 file2 ... fileN}   & \\
+        \texttt{vim +linenumber file}  & \\
+        \texttt{vim scp://login@serveur/path/to/file}  & \\
+        \texttt{vim scp://login@serveur/path/}  & \\
+    \end{tabular}
+
+    \subsection{sortir}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:q}   & Quitter\\
+        \texttt{:wq}  & Sauvegarder et quitter \\
+        \texttt{:q!}  & Quitter sans sauver\\
+    \end{tabular}
+
+    \section{Se déplacer}
+    \begin{tabular}{m{2cm} l}
+        \texttt{h,j,k,l}  & Se déplacer \\
+    \end{tabular}
+    \subsection{Dans la ligne}
+    \begin{tabular}{m{2cm} l}
+        \texttt{0}  & Aller au début de la ligne \\
+        \texttt{\$} & Aller à la fin de la ligne \\
+        \texttt{\^} & Aller au 1er char. de la ligne \\
+        \texttt{w}  & Mot suivant\\
+        \texttt{W}  & Mot suivant (précédé par un espace)\\
+    \end{tabular}
+    \subsection{Dans le fichier }
+    \begin{tabular}{m{2cm} l}
+        \texttt{gg} & Aller au début de la 1ère ligne \\
+        \texttt{G}  & Aller au début de la dernière ligne \\
+        \texttt{:n} & Aller à la ligne n \\
+        \texttt{\%} & Aller à la parenthèse correspondante \\
+    \end{tabular}
+
+    \section{Passer en mode insertion}
+    \begin{tabular}{m{2cm} l}
+        \texttt{i}  & A l'emplacement du curseur\\
+        \texttt{a}  & Après le curseur\\
+        \texttt{A}  & A la fin de la ligne\\
+        \texttt{o}  & En ouvrant une ligne en dessous\\
+        \texttt{O}  & En ouvrant une ligne au dessus\\
+    \end{tabular}
+
+    \section{Passer en mode visuel}
+    \begin{tabular}{m{2cm} l}
+        \texttt{v}& Mode visuel charactère\\
+        \texttt{V}& Mode visuel ligne\\
+        \texttt{CTRL+v}& Mode visuel block\\
+    \end{tabular}
+
+    \section{Undo / Redo}
+    \begin{tabular}{m{2cm} l}
+        \texttt{u}& Undo\\
+        \texttt{CTRL+r}& Redo\\
+    \end{tabular}\\
+
+    \section{ Sans quitter le mode insert}
+    \begin{tabular}{m{2cm} l}
+        \texttt{CTRL+w} & Efface le mot précédent\\
+        \texttt{CTRL+u} & Efface depuis le début de la ligne\\
+    \end{tabular}\\
+
+    \section{Ouvrir / Sauver}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:e fichier}& Ouvrir un fichier dans un buffer\\
+        \texttt{:w}& Sauver\\
+        \texttt{:w fichier}& Sauver Sous \\
+    \end{tabular}\\
+    \section{Gestion des buffers}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:ls}& Lister les buffers\\
+        \texttt{:b7}& Afficher le buffer 7\\
+        \texttt{:bn}& Buffer suivant\\
+        \texttt{:bp}& Buffer précédent\\
+    \end{tabular}\\
+
+    \section{Gestion des fenêtres}
+    \begin{tabular}{m{2cm} l}
+        \texttt{CTRL+w v}& Couper verticalement\\
+        \texttt{CTRL+w s}& Couper horizontalement\\
+        \texttt{CTRL+w $\leftarrow$ }& Aller dans la fenêtre à gauche\\
+        \texttt{CTRL+w $\rightarrow$ }&Aller dans la fenêtre à droite\\
+        \texttt{CTRL+w $\uparrow$ }&Aller dans la fenêtre au dessus\\
+        \texttt{CTRL+w $\downarrow$ }&Aller dans la fenêtre en dessous\\
+        \texttt{CTRL+w c }&Fermer la fenêtre\\
+    \end{tabular}\\
+
+    \section{Copier / Coller}
+    \subsection{ Copier la sélection courante }
+    \begin{tabular}{m{2cm} l}
+        \texttt{y}& Copier\\
+        \texttt{d}& Couper\\
+    \end{tabular}
+    \subsection{ Coller }
+    \begin{tabular}{m{2cm} l}
+        \texttt{p}& Coller (après)\\
+        \texttt{P}& Coller (avant)\\
+    \end{tabular}
+    \subsection{ Copier sans selection }
+    \begin{tabular}{m{2cm} l}
+        \texttt{yy}& Copier la ligne courante\\
+        \texttt{dd}& Couper la ligne courante\\
+        \texttt{yny}& Copier n lignes \\
+        \texttt{yw}& Copier le mot courant\\
+        \texttt{y\$}& Copier du curseur à la fin de la ligne\\
+    \end{tabular}
+
+    \subsection{ Utilisation des registres }
+    \begin{tabular}{m{2cm} l}
+        \texttt{"ay}& Copier dans le registre a\\
+        \texttt{"Ay}& Copier et ajouter au registre a\\
+        \texttt{:reg}& Voir les registres et leur contenu\\
+    \end{tabular} \\
+
+    Les registres utilisables sont les suivants :\\
+
+    \begin{tabular}{m{2cm} l}
+        \texttt{a..z}& 26 registres généraux\\
+        \texttt{1..9}& Registres des 9 derniers usages de d\\
+        \texttt{+}   & Registre presse-papier système (ctrl+c)\\
+        \texttt{*}   & Registre presse-papier système (souris)\\
+        \texttt{\%}  & Registre contenant le nom du fichier\\
+    \end{tabular} \\
+
+    \section{Rechercher}
+    \begin{tabular}{m{2cm} l}
+        \texttt{/mot}& Recherche "mot"\\
+        \texttt{n}& Suivant\\
+        \texttt{N}& Précédent\\
+    \end{tabular}
+
+    \section{Remplacer}
+    
+    \texttt{:\%s{\char`\/}expr1/expr2/g} \\
+    
+    \begin{tabular}{m{2cm} l}
+        \texttt{expr1 }   &  L'expression à remplacer\\
+        \texttt{expr2 }   &  L'expression de remplacement \\
+        \texttt{\% }   &  La portée de la recherche\\
+        \texttt{g }   &  Options\\
+    \end{tabular}\\
+
+    \subsection{Portée:}
+    \begin{tabular}{m{2cm} l}
+        \texttt{n,m}  & De la ligne n à la ligne m \\
+        \texttt{.,+5} & La ligne courante et les 5 lignes suivantes \\
+        \texttt{\%}   & dans tout le fichier \\
+    \end{tabular}\\
+
+    \subsection{Options:}
+    \begin{tabular}{m{2cm} l}
+        \texttt{g} & Continuer après le premier match sur la ligne\\
+        \texttt{c} & Demander confirmation\\
+        \texttt{i} & Ignorer la casse\\
+    \end{tabular}\\
+
+    \section{Correction orthographique}
+    \begin{tabular}{m{4cm} l}
+        \texttt{:spell lang=fr} & Démarrer le correcteur\\
+        \texttt{:setlocal spell lang=fr} & Correction dans le buffer courant\\
+        \texttt{:set nospell} & Arrête le correcteur\\
+        \texttt{]s} & Mot erroné suivant\\
+        \texttt{[s} & Mot erroné précédent\\
+        \texttt{z=} & Suggérer une correction\\
+        \texttt{zg} & Mot correct (ajoute au dico)\\
+        \texttt{zw} & Marque le mot comme incorrect\\
+    \end{tabular}\\
+
+    \section{Le coin du codeur}
+    \subsection{Incrémenter / Décrémenter}
+    \begin{tabular}{m{2cm} l}
+        \texttt{CTRL+a} & Incrémenter un nombre\\
+        \texttt{CTRL+x} & Décrémenter un nombre\\
+    \end{tabular}\\
+    \subsection{indentation}
+    \begin{tabular}{m{2cm} l}
+        \texttt{=}  & Indente auto. la selection\\
+        \texttt{==} & Indente auto. la ligne\\
+        \texttt{$>$}  & Augmente l'indentation \\
+        \texttt{$<$}  & Réduit l'indentation \\
+        \texttt{$>>$} & Augmente l'indentation de la ligne\\
+        \texttt{$<<$} & Réduit l'indentation de la ligne\\
+        \texttt{$n>>$} & Augmente de n indentations la ligne\\
+    \end{tabular}\\
+    \subsection{Compilation}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:make}  & Lance make dans le repertoire courant\\
+    \end{tabular}\\
+    \subsection{Commandes Shell}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:r fichier} & Insère le contenu de <fichier> \\
+        \texttt{:! cmd}  & Execute la commande cmd dans un shell\\
+        \texttt{:r! cmd} & Execute cmd et insère le résultat \\
+    \end{tabular}\\
+
+    \section{Gestion des sessions}
+    \begin{tabular}{m{4cm} l}
+        \texttt{:mks fichier.vim} & Enregistre la session\\
+        \texttt{:source fichier.vim} & Restaure la session\\
+    \end{tabular}\\
+    
+    \section{Gestion de fichiers (netrw) }
+    \begin{tabular}{m{2cm} l}
+        \texttt{:Explore} & Ouvre le gestionnaire de fichiers\\
+    \end{tabular}\\
+    \subsection{ Opérations}
+    \begin{tabular}{m{2cm} l}
+        \texttt{D} & Effacer fichier/repertoire\\
+        \texttt{d} & Créer un repertoire\\
+        \texttt{\%} & Ouvrir un nouveau fichier\\
+    \end{tabular}\\
+    \subsection{ Marquer / Démarquer}
+    \begin{tabular}{m{2cm} l}
+        \texttt{mf} & Marquer un fichier\\
+        \texttt{mu} & Démarquer tous les fichiers\\
+        \texttt{mp} & Afficher les fichiers marqués\\
+        \texttt{mt} & Taguer le repertoire courant\\
+    \end{tabular}\\
+    \subsection{ Opérations sur les fichiers marqués}
+    \begin{tabular}{m{2cm} l}
+        \texttt{me} & Editer\\
+        \texttt{md} & Diff\\
+        \texttt{mc} & Copier dans le repertoire tagué\\
+        \texttt{mm} & Déplacer dans le repertoire tagué\\
+    \end{tabular}\\
+
+\end{multicols*}
+\newpage
+
+\end{document}
+
