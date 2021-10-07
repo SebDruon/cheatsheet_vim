@@ -204,6 +204,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{h,j,k,l}  & Move cursor \\
         $\leftarrow$ $\downarrow$ $\uparrow$ $\rightarrow$  & Move cursor \\
     \end{tabular}
+    
     \subsection{Inside the line}
     \begin{tabular}{m{2cm} l}
         \texttt{0}  & Jump to first char \\
@@ -211,11 +212,14 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{\^} & Jump to first word of the line \\
         \texttt{w}  & Next word\\
         \texttt{b}  & Previous word\\
-        \texttt{f char} & jump to next occurence of char \\
-        \texttt{t char} & jump before next occurence of char \\
-        \texttt{F char} & jump to previous occurence of char \\
-        \texttt{T char} & jump after previous occurence of char \\
+        \texttt{f char} & Jump to next occurence of char \\
+        \texttt{t char} & Jump before next occurence of char \\
+        \texttt{F char} & Jump to previous occurence of char \\
+        \texttt{T char} & Jump after previous occurence of char \\
+        \texttt{;} & Repeat last f/t command \\
+        \texttt{,} & Repeat last F/T command \\
     \end{tabular}
+    
     \subsection{Inside the file }
     \begin{tabular}{m{2cm} l}
         \texttt{gg} & Jump to first line (start)\\
@@ -224,20 +228,28 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{\%} & Jump to matching Paren, Brace, etc. \\
     \end{tabular}
 
+    \subsection{Scrolling }
+    \begin{tabular}{m{2cm} l}
+        \texttt{CTRL + b} & Scroll up \\
+        \texttt{CTRL + u} & Scroll up (half a page)\\
+        \texttt{CTRL + d} & Scroll down (half a page) \\
+        \texttt{CTRL + f} & Scroll down \\
+    \end{tabular}
+
     \subsection{Inside the screen}
     \begin{tabular}{m{2cm} l}
-        \texttt{zz} & center the current line \\
-        \texttt{zb} & send current line to the bottom \\
-        \texttt{zt} & send current line to the top \\
-        \texttt{H} & jump to the top of the file \\
-        \texttt{M} & jump to the middle of the file \\
-        \texttt{L} & jump to the bottom of the file \\
+        \texttt{zz} & Center the current line \\
+        \texttt{zb} & Send current line to the bottom \\
+        \texttt{zt} & Send current line to the top \\
+        \texttt{H} & Jump to the top of the file \\
+        \texttt{M} & Jump to the middle of the file \\
+        \texttt{L} & Jump to the bottom of the file \\
     \end{tabular}
 
     \section{Switch to insert mode}
     \begin{tabular}{m{2cm} l}
         \texttt{i}  & At cursor position\\
-        \texttt{a}  & after cursor\\
+        \texttt{a}  & After cursor\\
         \texttt{A}  & At the end of the line\\
         \texttt{o}  & Open a new line (after)\\
         \texttt{O}  & Open a new line (before)\\
@@ -261,6 +273,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \begin{tabular}{m{2cm} l}
         \texttt{CTRL+w} & Erase previous word\\
         \texttt{CTRL+u} & Erase until the begining of the line\\
+        \texttt{CTRL+o} & Single command mode command\\
     \end{tabular}\\
 
     \section{Open / Save}
@@ -268,6 +281,8 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{:e fichier}& Open a file in a buffer\\
         \texttt{:w}& Save\\
         \texttt{:w fichier}& Save as \\
+        \texttt{:browse old}& Recently opened file \\
+
     \end{tabular}\\
     \section{Buffers}
     \begin{tabular}{m{2cm} l}
@@ -293,19 +308,45 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \end{tabular}\\
 
     Of course, you can substitute arrows by h,j,k,l \\
+        
+    \begin{tabular}{m{3cm} l}
+	\texttt{:sp file}& Open file in a split window\\
+    \end{tabular}\\
+    
+    \section{Sessions}
+    \begin{tabular}{m{4cm} l}
+        \texttt{:mks fichier.vim} & Save the session\\
+        \texttt{:source fichier.vim} & Restore the session\\
+    \end{tabular}\\
 
+    \section{Search}
+    \begin{tabular}{m{2cm} l}
+        \texttt{/word}& Find next occurence of "word"\\
+        \texttt{?word}& Find last occurence of "word"\\
+        \texttt{n}& Next\\
+        \texttt{N}& Previous\\
+    \end{tabular}
+    
+    \section{ Macros }
+    \begin{tabular}{m{4cm} l}
+        \texttt{qa} & Record macro a\\
+        \texttt{q} & Stop recording macro\\
+        \texttt{@a} & Run macro a\\
+        \texttt{@@} & Rerun last run macro\\
+    \end{tabular}\\
+    
     \section{Copy / Paste}
     \subsection{ Copy current selection }
     \begin{tabular}{m{2cm} l}
-        \texttt{y}& Copy\\
-        \texttt{d}& Cut\\
+        \texttt{y}& (yank) Copy\\
+        \texttt{d}& (delete) Cut\\
     \end{tabular}
     \subsection{ Paste }
     \begin{tabular}{m{2cm} l}
-        \texttt{p}& Paste (after)\\
-        \texttt{P}& Paste (before)\\
+        \texttt{p}& (put) Paste (after)\\
+        \texttt{P}& (put) Paste (before)\\
     \end{tabular}
-    \subsection{ Copy withou selection selection }
+    \subsection{ Copy without selection selection }
     \begin{tabular}{m{2cm} l}
         \texttt{yy}& Copy current line\\
         \texttt{dd}& Cut current line\\
@@ -331,12 +372,6 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{\%}  & Filename\\
     \end{tabular} \\
 
-    \section{Search}
-    \begin{tabular}{m{2cm} l}
-        \texttt{/word}& Find "word"\\
-        \texttt{n}& Next\\
-        \texttt{N}& Previous\\
-    \end{tabular}
 
     \section{Search \& replace}
     
@@ -361,6 +396,12 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{g} & Continue after first match\\
         \texttt{c} & Ask before replacing\\
         \texttt{i} & Ignore case\\
+    \end{tabular}\\
+    
+    \section{ Marking lines }
+    \begin{tabular}{m{2cm} l}
+        \texttt{m a} & Mark line in register a\\
+        \texttt{' a} & Return to mark a\\
     \end{tabular}\\
 
     \section{Spell checking}
@@ -400,14 +441,10 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{:r file} & Insert the content of <file> \\
         \texttt{:! cmd}  & Execute the command cmd in a shell\\
         \texttt{:r! cmd} & Execute the command cmd and insert the result \\
+        \texttt{:term} & Open a terminal window \\
     \end{tabular}\\
 
-    \section{Sessions}
-    \begin{tabular}{m{4cm} l}
-        \texttt{:mks fichier.vim} & Save the session\\
-        \texttt{:source fichier.vim} & Restore the session\\
-    \end{tabular}\\
-    
+
     \section{File management (netrw) }
     \begin{tabular}{m{2cm} l}
         \texttt{:Explore} & Open file manager\\
@@ -432,9 +469,6 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{mc} & Copy in tagged folder\\
         \texttt{mm} & Move to tagged folder\\
     \end{tabular}\\
-
 \end{multicols*}
-\newpage
-
 \end{document}
 
