@@ -195,13 +195,14 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \subsection{Exiting}
     \begin{tabular}{m{2cm} l}
         \texttt{:q}   & Quit\\
-        \texttt{:wq}  & Sauve and quit \\
+        \texttt{:wq}  & Save and quit \\
         \texttt{:q!}  & Quit without saving\\
     \end{tabular}
 
     \section{Moving}
     \begin{tabular}{m{2cm} l}
         \texttt{h,j,k,l}  & Move cursor \\
+        $\leftarrow$ $\downarrow$ $\uparrow$ $\rightarrow$  & Move cursor \\
     \end{tabular}
     \subsection{Inside the line}
     \begin{tabular}{m{2cm} l}
@@ -210,6 +211,10 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{\^} & Jump to first word of the line \\
         \texttt{w}  & Next word\\
         \texttt{b}  & Previous word\\
+        \texttt{f char} & jump to next occurence of char \\
+        \texttt{t char} & jump before next occurence of char \\
+        \texttt{F char} & jump to previous occurence of char \\
+        \texttt{T char} & jump after previous occurence of char \\
     \end{tabular}
     \subsection{Inside the file }
     \begin{tabular}{m{2cm} l}
@@ -217,6 +222,16 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{G}  & Jump to last line (start) \\
         \texttt{:n} & Jump to line n \\
         \texttt{\%} & Jump to matching Paren, Brace, etc. \\
+    \end{tabular}
+
+    \subsection{Inside the screen}
+    \begin{tabular}{m{2cm} l}
+        \texttt{zz} & center the current line \\
+        \texttt{zb} & send current line to the bottom \\
+        \texttt{zt} & send current line to the top \\
+        \texttt{H} & jump to the top of the file \\
+        \texttt{M} & jump to the middle of the file \\
+        \texttt{L} & jump to the bottom of the file \\
     \end{tabular}
 
     \section{Switch to insert mode}
@@ -227,7 +242,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{o}  & Open a new line (after)\\
         \texttt{O}  & Open a new line (before)\\
     \end{tabular}
-
+    
     \section{Switch to visual mode}
     \begin{tabular}{m{2cm} l}
         \texttt{v}& Visual mode (char by char)\\
@@ -235,10 +250,11 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL+v}& Visual mode (block)\\
     \end{tabular}
 
-    \section{Undo / Redo}
+    \section{Normal mode}
     \begin{tabular}{m{2cm} l}
         \texttt{u}& Undo\\
         \texttt{CTRL+r}& Redo\\
+        \texttt{.}& Repeat last edit\\
     \end{tabular}\\
 
     \section{Without leaving Insert mode}
@@ -262,7 +278,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \end{tabular}\\
 
     \section{Windows}
-    \begin{tabular}{m{2cm} l}
+    \begin{tabular}{m{3cm} l}
         \texttt{CTRL+w v}& Split vertically\\
         \texttt{CTRL+w s}& Split horizontally\\
         \texttt{CTRL+w $\leftarrow$ }& Go to Left window\\
@@ -270,7 +286,13 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL+w $\uparrow$ }& Go to window above\\
         \texttt{CTRL+w $\downarrow$ }&Go to window under\\
         \texttt{CTRL+w c }&Close window\\
+        \texttt{CTRL+w SHIFT $\leftarrow$ }& Move window to the left\\
+        \texttt{CTRL+w SHIFT $\rightarrow$ }& Move window to the right \\
+        \texttt{CTRL+w SHIFT $\uparrow$ }& Move window up\\
+        \texttt{CTRL+w SHIFT $\downarrow$ }& Move window down\\
     \end{tabular}\\
+
+    Of course, you can substitute arrows by h,j,k,l \\
 
     \section{Copy / Paste}
     \subsection{ Copy current selection }
