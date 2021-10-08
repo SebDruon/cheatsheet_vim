@@ -228,14 +228,6 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{\%} & Jump to matching Paren, Brace, etc. \\
     \end{tabular}
 
-    \subsection{Scrolling }
-    \begin{tabular}{m{2cm} l}
-        \texttt{CTRL + b} & Scroll up \\
-        \texttt{CTRL + u} & Scroll up (half a page)\\
-        \texttt{CTRL + d} & Scroll down (half a page) \\
-        \texttt{CTRL + f} & Scroll down \\
-    \end{tabular}
-
     \subsection{Inside the screen}
     \begin{tabular}{m{2cm} l}
         \texttt{zz} & Center the current line \\
@@ -244,6 +236,10 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{H} & Jump to the top of the file \\
         \texttt{M} & Jump to the middle of the file \\
         \texttt{L} & Jump to the bottom of the file \\
+        \texttt{CTRL + b} & Scroll up \\
+        \texttt{CTRL + u} & Scroll up (half a page)\\
+        \texttt{CTRL + d} & Scroll down (half a page) \\
+        \texttt{CTRL + f} & Scroll down \\
     \end{tabular}
 
     \section{Switch to insert mode}
@@ -293,21 +289,15 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \end{tabular}\\
 
     \section{Windows}
-    \begin{tabular}{m{3cm} l}
+    \begin{tabular}{m{4cm} l}
         \texttt{CTRL+w v}& Split vertically\\
         \texttt{CTRL+w s}& Split horizontally\\
-        \texttt{CTRL+w $\leftarrow$ }& Go to Left window\\
-        \texttt{CTRL+w $\rightarrow$ }& Go to right window\\
-        \texttt{CTRL+w $\uparrow$ }& Go to window above\\
-        \texttt{CTRL+w $\downarrow$ }&Go to window under\\
+        \texttt{CTRL+w h,j,k,l }& Change window\\
+        \texttt{CTRL+w SHIFT h,j,k,l }& Move \\
         \texttt{CTRL+w c }&Close window\\
-        \texttt{CTRL+w SHIFT $\leftarrow$ }& Move window to the left\\
-        \texttt{CTRL+w SHIFT $\rightarrow$ }& Move window to the right \\
-        \texttt{CTRL+w SHIFT $\uparrow$ }& Move window up\\
-        \texttt{CTRL+w SHIFT $\downarrow$ }& Move window down\\
     \end{tabular}\\
 
-    Of course, you can substitute arrows by h,j,k,l \\
+    Of course, you can substitute h,j,k,l by arrows \\
         
     \begin{tabular}{m{3cm} l}
 	\texttt{:sp file}& Open file in a split window\\
@@ -416,6 +406,14 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{zw} & Mark word as incorrect\\
     \end{tabular}\\
 
+    \subsection{Shell Commands}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:r file} & Insert the content of <file> \\
+        \texttt{:! cmd}  & Execute the command cmd in a shell\\
+        \texttt{:r! cmd} & Execute the command cmd and insert the result \\
+        \texttt{:term} & Open a terminal window \\
+    \end{tabular}\\
+    
     \section{Coders' corner}
     \subsection{Increase / Decrease}
     \begin{tabular}{m{2cm} l}
@@ -435,13 +433,6 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \subsection{Compilation}
     \begin{tabular}{m{2cm} l}
         \texttt{:make}  & Launch make in the current folder\\
-    \end{tabular}\\
-    \subsection{Shell Commands}
-    \begin{tabular}{m{2cm} l}
-        \texttt{:r file} & Insert the content of <file> \\
-        \texttt{:! cmd}  & Execute the command cmd in a shell\\
-        \texttt{:r! cmd} & Execute the command cmd and insert the result \\
-        \texttt{:term} & Open a terminal window \\
     \end{tabular}\\
 
 
