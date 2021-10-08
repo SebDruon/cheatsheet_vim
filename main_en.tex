@@ -293,7 +293,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL+w v}& Split vertically\\
         \texttt{CTRL+w s}& Split horizontally\\
         \texttt{CTRL+w h,j,k,l }& Change window\\
-        \texttt{CTRL+w SHIFT h,j,k,l }& Move \\
+        \texttt{CTRL+w SHIFT h,j,k,l }& Move window\\
         \texttt{CTRL+w c }&Close window\\
     \end{tabular}\\
 
@@ -394,6 +394,22 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{' a} & Return to mark a\\
     \end{tabular}\\
 
+    \section{ Tabs }
+    \begin{tabular}{m{2cm} l}
+        \texttt{:tabnew} & Open a new tab\\
+        \texttt{gt} & Move to next tab\\
+        \texttt{gT} & Move to previous tab\\
+        \texttt{:tab ba} & Edit all buffers as tabs\\
+    \end{tabular}\\
+    
+    \section{Shell Commands}
+    \begin{tabular}{m{2cm} l}
+        \texttt{:r file} & Insert the content of <file> \\
+        \texttt{:! cmd}  & Execute the command cmd in a shell\\
+        \texttt{:r! cmd} & Execute the command cmd and insert the result \\
+        \texttt{:term} & Open a terminal window \\
+    \end{tabular}\\
+    
     \section{Spell checking}
     \begin{tabular}{m{4cm} l}
         \texttt{:spell lang=fr} & Start spell checking\\
@@ -406,14 +422,6 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{zw} & Mark word as incorrect\\
     \end{tabular}\\
 
-    \subsection{Shell Commands}
-    \begin{tabular}{m{2cm} l}
-        \texttt{:r file} & Insert the content of <file> \\
-        \texttt{:! cmd}  & Execute the command cmd in a shell\\
-        \texttt{:r! cmd} & Execute the command cmd and insert the result \\
-        \texttt{:term} & Open a terminal window \\
-    \end{tabular}\\
-    
     \section{Coders' corner}
     \subsection{Increase / Decrease}
     \begin{tabular}{m{2cm} l}
@@ -435,6 +443,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{:make}  & Launch make in the current folder\\
     \end{tabular}\\
 
+    
 
     \section{File management (netrw) }
     \begin{tabular}{m{2cm} l}
@@ -460,6 +469,12 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{mc} & Copy in tagged folder\\
         \texttt{mm} & Move to tagged folder\\
     \end{tabular}\\
+
+    \section{ Digraphs }
+    \begin{tabular}{m{2cm} l}
+        \texttt{CTRL-k code} & Insert digraph\\
+    \end{tabular}\\
+    
 \end{multicols*}
 \end{document}
 
