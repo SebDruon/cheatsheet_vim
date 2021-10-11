@@ -318,7 +318,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \end{tabular}
     
     \section{ Macros }
-    \begin{tabular}{m{4cm} l}
+    \begin{tabular}{m{2cm} l}
         \texttt{qa} & Record macro a\\
         \texttt{q} & Stop recording macro\\
         \texttt{@a} & Run macro a\\
@@ -429,7 +429,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{]s} & Next erroneous word\\
         \texttt{[s} & Previous erroneous word\\
         \texttt{z=} & Suggest a correction\\
-        \texttt{zg} & Correct word (add to dictionary)\\
+        \texttt{zg} & Add to dictionary\\
         \texttt{zw} & Mark word as incorrect\\
     \end{tabular}\\
 
@@ -439,7 +439,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL+a} & Adds 1 to a number\\
         \texttt{CTRL+x} & Subsracts 1 to a number\\
     \end{tabular}\\
-    \subsection{indentation}
+    \subsection{Indentation}
     \begin{tabular}{m{2cm} l}
         \texttt{=}  & Auto. indent selection\\
         \texttt{==} & Auto. indent line \\
@@ -501,16 +501,32 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
 
     \subsection{ Format }
 
-    <number of time> + <Command> + <text object>
+    <Number of times> + <Command> + <Motion> or <Text object>
 
     \subsection{Commands}
     \begin{tabular}{m{2cm} l}
         \texttt{c} & Change \\
         \texttt{d} & Delete \\
-        \texttt{v} & visual \\
+        \texttt{y} & Yank \\
+    \end{tabular}\\
+
+
+    \subsection{Motion}
+    \begin{tabular}{m{2cm} l}
+        \texttt{)} & Move cursor to end of sentence \\
+        \texttt{(} & Move cursor to beginning of prior sentence \\
+        \texttt{\}} & Move cursor to the next paragraph \\
+        \texttt{\{} & Move cursor to the beginning of the prior paragraph \\
+        \texttt{w} & Move cursor to next word \\
+        \texttt{b} & Move cursor back a word \\
+        \texttt{\$} & Move cursor to the end of the logical line \\
+        \texttt{0} & Move cursor to the beginning of the logical line \\
+        \texttt{G} & Move cursor to the end of the file \\
+        \texttt{gg} & Move cursor to the beginning of the file \\
     \end{tabular}\\
 
     \subsection{Text Objects}
+    
     \begin{tabular}{m{2cm} l}
         \texttt{s} & Sentence \\
         \texttt{w} & Word \\
@@ -519,7 +535,8 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{a'} & Quoted string (Single quote)\\
     \end{tabular}\\
 
-    \subsection{More precisely ...}
+    \subsection{More precise Text Objects}
+
     \begin{tabular}{m{2cm} l}
         \texttt{w}  & From cursor to the end of the word \\
         \texttt{iw} & Inner word (Full word) \\
@@ -530,6 +547,12 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \begin{tabular}{m{2cm} l}
         \texttt{CTRL-k code} & Insert digraph\\
     \end{tabular}\\
+
+%    \begin{tabular}{m{2cm} l}
+%        \texttt{} &  \\
+%    \end{tabular}
+
+
 
 \end{multicols*}
 
