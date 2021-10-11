@@ -388,18 +388,21 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{i} & Ignore case\\
     \end{tabular}\\
     
+    \subsection{Replace with foobar (y/n/a/q/l/\^{}E/\^{}Y) ?}
+    \begin{tabular}{m{2cm} l}
+        \texttt{y} & Yes\\
+        \texttt{n} & No\\
+        \texttt{a} & Replace all remaining matches\\
+        \texttt{q} & Quit substitution\\
+        \texttt{l} & Last one !\\
+        \texttt{CTRL + e} & Scroll down\\
+        \texttt{CTRL + y} & Scroll up \
+    \end{tabular}\\
+    
     \section{ Marking lines }
     \begin{tabular}{m{2cm} l}
         \texttt{m a} & Mark line in register a\\
         \texttt{' a} & Return to mark a\\
-    \end{tabular}\\
-
-    \section{ Tabs }
-    \begin{tabular}{m{2cm} l}
-        \texttt{:tabnew} & Open a new tab\\
-        \texttt{gt} & Move to next tab\\
-        \texttt{gT} & Move to previous tab\\
-        \texttt{:tab ba} & Edit all buffers as tabs\\
     \end{tabular}\\
     
     \section{Shell Commands}
@@ -408,6 +411,14 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{:! cmd}  & Execute the command cmd in a shell\\
         \texttt{:r! cmd} & Execute the command cmd and insert the result \\
         \texttt{:term} & Open a terminal window \\
+    \end{tabular}\\
+
+    \section{ Tabs }
+    \begin{tabular}{m{2cm} l}
+        \texttt{:tabnew} & Open a new tab\\
+        \texttt{gt} & Move to next tab\\
+        \texttt{gT} & Move to previous tab\\
+        \texttt{:tab ba} & Edit all buffers as tabs\\
     \end{tabular}\\
     
     \section{Spell checking}
@@ -443,8 +454,6 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{:make}  & Launch make in the current folder\\
     \end{tabular}\\
 
-    
-
     \section{File management (netrw) }
     \begin{tabular}{m{2cm} l}
         \texttt{:Explore} & Open file manager\\
@@ -470,11 +479,59 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{mm} & Move to tagged folder\\
     \end{tabular}\\
 
+    \section{More on windows }
+
+    \subsection{Scroll simultaneously }
+
+    \begin{tabular}{m{3cm} l}
+        \texttt{:set scrollbind} & Have windows scroll together\\
+    \end{tabular}\\
+
+    \subsection{Resizing windows}
+
+    \begin{tabular}{m{2cm} l}
+        \texttt{CTRL-w -} & Decrease the height \\
+        \texttt{CTRL-w +} & Increase the height \\
+        \texttt{CTRL-w <} & Decrease the width \\
+        \texttt{CTRL-w >} & Increase the width \\
+        \texttt{CTRL-w =} & Make all splits equal \\
+    \end{tabular}\\
+
+    \section{Do you speak vim ?}
+
+    \subsection{ Format }
+
+    <number of time> + <Command> + <text object>
+
+    \subsection{Commands}
+    \begin{tabular}{m{2cm} l}
+        \texttt{c} & Change \\
+        \texttt{d} & Delete \\
+        \texttt{v} & visual \\
+    \end{tabular}\\
+
+    \subsection{Text Objects}
+    \begin{tabular}{m{2cm} l}
+        \texttt{s} & Sentence \\
+        \texttt{w} & Word \\
+        \texttt{p} & Paragraph \\
+        \texttt{a"} & Quoted string \\
+        \texttt{a'} & Quoted string (Single quote)\\
+    \end{tabular}\\
+
+    \subsection{More precisely ...}
+    \begin{tabular}{m{2cm} l}
+        \texttt{w}  & From cursor to the end of the word \\
+        \texttt{iw} & Inner word (Full word) \\
+        \texttt{aw} & A word (A word, including trailing whitespaces)\\
+    \end{tabular}\\
+    
     \section{ Digraphs }
     \begin{tabular}{m{2cm} l}
         \texttt{CTRL-k code} & Insert digraph\\
     \end{tabular}\\
-    
+
 \end{multicols*}
+
 \end{document}
 
