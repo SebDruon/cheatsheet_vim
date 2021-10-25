@@ -1,14 +1,10 @@
 LATEX= pdflatex
 
-all: main_fr.pdf main_en.pdf
+all: cheatsheet_vim.pdf
 
-main_fr.pdf:	main_fr.tex 
-	$(LATEX) main_fr.tex
-	$(LATEX) main_fr.tex
-
-main_en.pdf:	main_en.tex 
-	$(LATEX) main_en.tex
-	$(LATEX) main_en.tex
+cheatsheet_vim.pdf:	cheatsheet_vim.tex 
+	$(LATEX) cheatsheet_vim.tex
+	$(LATEX) cheatsheet_vim.tex
 
 clean:
 	rm -f *.log

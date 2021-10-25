@@ -1,5 +1,5 @@
 \documentclass[8pt,landscape,a4paper]{article}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
@@ -47,7 +47,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
 \footnotesize
 \sffamily
 \textbf{Vim Cheatsheet}\\
-{\scriptsize seb@homedruon.com}
+{\scriptsize sebastien.druon@umontpellier.fr}
 \end{mdframed}
 }
 
@@ -195,6 +195,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \subsection{Exiting}
     \begin{tabular}{m{2cm} l}
         \texttt{:q}   & Quit\\
+        \texttt{:qa}  & Close all files\\
         \texttt{:wq}  & Save and quit \\
         \texttt{:q!}  & Quit without saving\\
     \end{tabular}
@@ -224,7 +225,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \begin{tabular}{m{2cm} l}
         \texttt{gg} & Jump to first line (start)\\
         \texttt{G}  & Jump to last line (start) \\
-        \texttt{:n} & Jump to line n \\
+        \texttt{nnn gg} & Jump to line nnn \\
         \texttt{\%} & Jump to matching Paren, Brace, etc. \\
     \end{tabular}
 
@@ -293,7 +294,8 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL+w v}& Split vertically\\
         \texttt{CTRL+w s}& Split horizontally\\
         \texttt{CTRL+w h,j,k,l }& Change window\\
-        \texttt{CTRL+w SHIFT h,j,k,l }& Move window\\
+        \texttt{CTRL+w H,J,K,L }& Move window\\
+        \texttt{CTRL+w R,r }& Rotate windows\\
         \texttt{CTRL+w c }&Close window\\
     \end{tabular}\\
 
@@ -501,7 +503,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
 
     \subsection{ Format }
 
-    <Number of times> + <Command> + <Motion> or <Text object>
+    <Number of times> + <Command> + <Motion> or <Text object> \\
 
     \subsection{Commands}
     \begin{tabular}{m{2cm} l}
@@ -540,7 +542,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
     \begin{tabular}{m{2cm} l}
         \texttt{w}  & From cursor to the end of the word \\
         \texttt{iw} & Inner word (Full word) \\
-        \texttt{aw} & A word (A word, including trailing whitespaces)\\
+        \texttt{aw} & Around word (including trailing whitespaces)\\
     \end{tabular}\\
     
     \section{ Digraphs }
@@ -548,11 +550,17 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
         \texttt{CTRL-k code} & Insert digraph\\
     \end{tabular}\\
 
-%    \begin{tabular}{m{2cm} l}
-%        \texttt{} &  \\
-%    \end{tabular}
+	\vfill\null 
+	\columnbreak
 
+	\section{ Moves illustrated}
 
+	\vspace{2cm}
+	\begin{center}
+	\includegraphics[angle=90,origin=c,scale=0.8]{moves.png}
+	\end{center}
+	
+	\vfill\null 
 
 \end{multicols*}
 
