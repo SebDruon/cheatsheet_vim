@@ -12,6 +12,7 @@ Some inspiration also came from other cheatsheets available on the Internet ( an
 One last advice : cheatsheets are great during the first days of using vim, but they are not the best way to start. If you haven't done it yet, please have a look on :vimtutor. It's a gret step-by-step introduction to this wonderful tool.
 
 Have fun,
+
 Seb
 
 
