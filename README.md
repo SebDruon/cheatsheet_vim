@@ -1,6 +1,7 @@
 # Yet another cheatsheet for vim
 
 I originally made this cheatsheet for my students, with the hope it would also help me be more efficient with vim.
+
 But this work is not only my own. Some corrections have been made based on the suggestions of r/vim from Reddit. ( Many thanks to them ).
 Some inspiration also came from other cheatsheets available on the Internet.
 
